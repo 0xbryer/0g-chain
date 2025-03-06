@@ -1,6 +1,8 @@
 // SPDX-License-Identifier: LGPL-3.0-only
 pragma solidity >=0.8.0;
 
+import "./types.sol";
+
 /**
  * @dev Description defines a validator description
  */
@@ -158,19 +160,6 @@ enum BondStatus {
 struct NullableUint {
     bool isNull;
     uint value;
-}
-
-struct PageRequest {
-    bytes key;
-    uint64 offset;
-    uint64 limit;
-    bool countTotal;
-    bool reverse;
-}
-
-struct PageResponse {
-    bytes nextKey;
-    uint64 total;
 }
 
 interface IStaking {
