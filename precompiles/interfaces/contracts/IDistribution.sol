@@ -33,38 +33,31 @@ interface IDistribution {
 
     /**
      * @dev SetWithdrawAddress defines a method to change the withdraw address for a delegator (or validator self-delegation).
+     * delegator address is msg.sener.
+     * 
      * cosmos grpc: rpc SetWithdrawAddress(MsgSetWithdrawAddress) returns (MsgSetWithdrawAddressResponse);
      */
     function setWithdrawAddress(
-        address delegatorAddress,
         address withdrawerAddress
     ) external returns (bool success);
 
     /**
      * @dev WithdrawDelegatorReward defines a method to withdraw rewards of delegator from a single validator.
+     * delegator address is msg.sender.
+     * 
      * cosmos grpc: rpc WithdrawDelegatorReward(MsgWithdrawDelegatorReward) returns (MsgWithdrawDelegatorRewardResponse);
      */
     function withdrawDelegatorRewards(
-        address delegatorAddress,
         string memory validatorAddress
     ) external returns (Coin[] calldata amount);
 
     /**
      * @dev WithdrawValidatorCommission defines a method to withdraw the full commission to the validator address.
+     * validator address is msg.sender.
+     * 
      * cosmos grpc: rpc WithdrawValidatorCommission(MsgWithdrawValidatorCommission) returns (MsgWithdrawValidatorCommissionResponse);
      */
-    function withdrawValidatorCommission(
-        address validatorAddress
-    ) external returns (Coin[] calldata amount);
-
-    /**
-     * @dev FundCommunityPool defines a method to allow an account to directly fund the community pool.
-     * cosmos grpc: rpc FundCommunityPool(MsgFundCommunityPool) returns (MsgFundCommunityPoolResponse);
-     */
-    function fundCommunityPool(
-        address depositor,
-        uint256 amount
-    ) external returns (bool success);
+    function withdrawValidatorCommission() external returns (Coin[] calldata amount);
 
     /*=== cosmos query ===*/
 
@@ -156,10 +149,4 @@ interface IDistribution {
     function delegatorWithdrawAddress(
         address delegatorAddress
     ) external view returns (address withdrawAddress);
-
-    /**
-     * @dev CommunityPool queries the community pool coins.
-     * cosmos grpc: rpc CommunityPool(QueryCommunityPoolRequest) returns (QueryCommunityPoolResponse);
-     */
-    function CommunityPool() external view returns (DecCoin[] memory pool);
 }

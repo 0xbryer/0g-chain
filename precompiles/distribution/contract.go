@@ -30,7 +30,7 @@ var (
 
 // DistributionMetaData contains all meta data concerning the Distribution contract.
 var DistributionMetaData = &bind.MetaData{
-	ABI: "[{\"inputs\":[],\"name\":\"CommunityPool\",\"outputs\":[{\"components\":[{\"internalType\":\"string\",\"name\":\"denom\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"internalType\":\"structDecCoin[]\",\"name\":\"pool\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"delegatorAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"validatorAddress\",\"type\":\"address\"}],\"name\":\"delegationRewards\",\"outputs\":[{\"components\":[{\"internalType\":\"string\",\"name\":\"denom\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"internalType\":\"structDecCoin[]\",\"name\":\"rewards\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"delegatorAddress\",\"type\":\"address\"}],\"name\":\"delegationTotalRewards\",\"outputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"validatorAddress\",\"type\":\"address\"},{\"components\":[{\"internalType\":\"string\",\"name\":\"denom\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"internalType\":\"structDecCoin[]\",\"name\":\"reward\",\"type\":\"tuple[]\"}],\"internalType\":\"structDelegationDelegatorReward[]\",\"name\":\"rewards\",\"type\":\"tuple[]\"},{\"components\":[{\"internalType\":\"string\",\"name\":\"denom\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"internalType\":\"structDecCoin[]\",\"name\":\"total\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"delegatorAddress\",\"type\":\"address\"}],\"name\":\"delegatorValidators\",\"outputs\":[{\"internalType\":\"address[]\",\"name\":\"validators\",\"type\":\"address[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"delegatorAddress\",\"type\":\"address\"}],\"name\":\"delegatorWithdrawAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"withdrawAddress\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"depositor\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"fundCommunityPool\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"success\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"params\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"communityTax\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"baseProposerReward\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"bonusProposerReward\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"withdrawAddrEnabled\",\"type\":\"bool\"}],\"internalType\":\"structParams\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"delegatorAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"withdrawerAddress\",\"type\":\"address\"}],\"name\":\"setWithdrawAddress\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"success\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"validatorAddress\",\"type\":\"string\"}],\"name\":\"validatorCommission\",\"outputs\":[{\"components\":[{\"internalType\":\"string\",\"name\":\"denom\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"internalType\":\"structDecCoin[]\",\"name\":\"commission\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"validatorAddress\",\"type\":\"address\"}],\"name\":\"validatorDistributionInfo\",\"outputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"operatorAddress\",\"type\":\"address\"},{\"components\":[{\"internalType\":\"string\",\"name\":\"denom\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"internalType\":\"structDecCoin[]\",\"name\":\"selfBondRewards\",\"type\":\"tuple[]\"},{\"components\":[{\"internalType\":\"string\",\"name\":\"denom\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"internalType\":\"structDecCoin[]\",\"name\":\"commission\",\"type\":\"tuple[]\"}],\"internalType\":\"structValidatorDistributionInfoResponse\",\"name\":\"distributionInfo\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"validatorAddress\",\"type\":\"address\"}],\"name\":\"validatorOutstandingRewards\",\"outputs\":[{\"components\":[{\"internalType\":\"string\",\"name\":\"denom\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"internalType\":\"structDecCoin[]\",\"name\":\"rewards\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"validatorAddress\",\"type\":\"address\"},{\"internalType\":\"uint64\",\"name\":\"startingHeight\",\"type\":\"uint64\"},{\"internalType\":\"uint64\",\"name\":\"endingHeight\",\"type\":\"uint64\"},{\"components\":[{\"internalType\":\"bytes\",\"name\":\"key\",\"type\":\"bytes\"},{\"internalType\":\"uint64\",\"name\":\"offset\",\"type\":\"uint64\"},{\"internalType\":\"uint64\",\"name\":\"limit\",\"type\":\"uint64\"},{\"internalType\":\"bool\",\"name\":\"countTotal\",\"type\":\"bool\"},{\"internalType\":\"bool\",\"name\":\"reverse\",\"type\":\"bool\"}],\"internalType\":\"structPageRequest\",\"name\":\"pageRequest\",\"type\":\"tuple\"}],\"name\":\"validatorSlashes\",\"outputs\":[{\"components\":[{\"internalType\":\"uint64\",\"name\":\"validatorPeriod\",\"type\":\"uint64\"},{\"internalType\":\"uint256\",\"name\":\"fraction\",\"type\":\"uint256\"}],\"internalType\":\"structValidatorSlashEvent[]\",\"name\":\"slashes\",\"type\":\"tuple[]\"},{\"components\":[{\"internalType\":\"bytes\",\"name\":\"nextKey\",\"type\":\"bytes\"},{\"internalType\":\"uint64\",\"name\":\"total\",\"type\":\"uint64\"}],\"internalType\":\"structPageResponse\",\"name\":\"pageResponse\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"delegatorAddress\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"validatorAddress\",\"type\":\"string\"}],\"name\":\"withdrawDelegatorRewards\",\"outputs\":[{\"components\":[{\"internalType\":\"string\",\"name\":\"denom\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"internalType\":\"structCoin[]\",\"name\":\"amount\",\"type\":\"tuple[]\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"validatorAddress\",\"type\":\"address\"}],\"name\":\"withdrawValidatorCommission\",\"outputs\":[{\"components\":[{\"internalType\":\"string\",\"name\":\"denom\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"internalType\":\"structCoin[]\",\"name\":\"amount\",\"type\":\"tuple[]\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}]",
+	ABI: "[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"delegatorAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"validatorAddress\",\"type\":\"address\"}],\"name\":\"delegationRewards\",\"outputs\":[{\"components\":[{\"internalType\":\"string\",\"name\":\"denom\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"internalType\":\"structDecCoin[]\",\"name\":\"rewards\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"delegatorAddress\",\"type\":\"address\"}],\"name\":\"delegationTotalRewards\",\"outputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"validatorAddress\",\"type\":\"address\"},{\"components\":[{\"internalType\":\"string\",\"name\":\"denom\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"internalType\":\"structDecCoin[]\",\"name\":\"reward\",\"type\":\"tuple[]\"}],\"internalType\":\"structDelegationDelegatorReward[]\",\"name\":\"rewards\",\"type\":\"tuple[]\"},{\"components\":[{\"internalType\":\"string\",\"name\":\"denom\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"internalType\":\"structDecCoin[]\",\"name\":\"total\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"delegatorAddress\",\"type\":\"address\"}],\"name\":\"delegatorValidators\",\"outputs\":[{\"internalType\":\"address[]\",\"name\":\"validators\",\"type\":\"address[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"delegatorAddress\",\"type\":\"address\"}],\"name\":\"delegatorWithdrawAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"withdrawAddress\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"params\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"communityTax\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"baseProposerReward\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"bonusProposerReward\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"withdrawAddrEnabled\",\"type\":\"bool\"}],\"internalType\":\"structParams\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"withdrawerAddress\",\"type\":\"address\"}],\"name\":\"setWithdrawAddress\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"success\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"validatorAddress\",\"type\":\"string\"}],\"name\":\"validatorCommission\",\"outputs\":[{\"components\":[{\"internalType\":\"string\",\"name\":\"denom\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"internalType\":\"structDecCoin[]\",\"name\":\"commission\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"validatorAddress\",\"type\":\"address\"}],\"name\":\"validatorDistributionInfo\",\"outputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"operatorAddress\",\"type\":\"address\"},{\"components\":[{\"internalType\":\"string\",\"name\":\"denom\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"internalType\":\"structDecCoin[]\",\"name\":\"selfBondRewards\",\"type\":\"tuple[]\"},{\"components\":[{\"internalType\":\"string\",\"name\":\"denom\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"internalType\":\"structDecCoin[]\",\"name\":\"commission\",\"type\":\"tuple[]\"}],\"internalType\":\"structValidatorDistributionInfoResponse\",\"name\":\"distributionInfo\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"validatorAddress\",\"type\":\"address\"}],\"name\":\"validatorOutstandingRewards\",\"outputs\":[{\"components\":[{\"internalType\":\"string\",\"name\":\"denom\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"internalType\":\"structDecCoin[]\",\"name\":\"rewards\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"validatorAddress\",\"type\":\"address\"},{\"internalType\":\"uint64\",\"name\":\"startingHeight\",\"type\":\"uint64\"},{\"internalType\":\"uint64\",\"name\":\"endingHeight\",\"type\":\"uint64\"},{\"components\":[{\"internalType\":\"bytes\",\"name\":\"key\",\"type\":\"bytes\"},{\"internalType\":\"uint64\",\"name\":\"offset\",\"type\":\"uint64\"},{\"internalType\":\"uint64\",\"name\":\"limit\",\"type\":\"uint64\"},{\"internalType\":\"bool\",\"name\":\"countTotal\",\"type\":\"bool\"},{\"internalType\":\"bool\",\"name\":\"reverse\",\"type\":\"bool\"}],\"internalType\":\"structPageRequest\",\"name\":\"pageRequest\",\"type\":\"tuple\"}],\"name\":\"validatorSlashes\",\"outputs\":[{\"components\":[{\"internalType\":\"uint64\",\"name\":\"validatorPeriod\",\"type\":\"uint64\"},{\"internalType\":\"uint256\",\"name\":\"fraction\",\"type\":\"uint256\"}],\"internalType\":\"structValidatorSlashEvent[]\",\"name\":\"slashes\",\"type\":\"tuple[]\"},{\"components\":[{\"internalType\":\"bytes\",\"name\":\"nextKey\",\"type\":\"bytes\"},{\"internalType\":\"uint64\",\"name\":\"total\",\"type\":\"uint64\"}],\"internalType\":\"structPageResponse\",\"name\":\"pageResponse\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"validatorAddress\",\"type\":\"string\"}],\"name\":\"withdrawDelegatorRewards\",\"outputs\":[{\"components\":[{\"internalType\":\"string\",\"name\":\"denom\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"internalType\":\"structCoin[]\",\"name\":\"amount\",\"type\":\"tuple[]\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"withdrawValidatorCommission\",\"outputs\":[{\"components\":[{\"internalType\":\"string\",\"name\":\"denom\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"internalType\":\"structCoin[]\",\"name\":\"amount\",\"type\":\"tuple[]\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}]",
 }
 
 // DistributionABI is the input ABI used to generate the binding from.
@@ -177,37 +177,6 @@ func (_Distribution *DistributionTransactorRaw) Transfer(opts *bind.TransactOpts
 // Transact invokes the (paid) contract method with params as input values.
 func (_Distribution *DistributionTransactorRaw) Transact(opts *bind.TransactOpts, method string, params ...interface{}) (*types.Transaction, error) {
 	return _Distribution.Contract.contract.Transact(opts, method, params...)
-}
-
-// CommunityPool is a free data retrieval call binding the contract method 0x5637d7c9.
-//
-// Solidity: function CommunityPool() view returns((string,uint256)[] pool)
-func (_Distribution *DistributionCaller) CommunityPool(opts *bind.CallOpts) ([]DecCoin, error) {
-	var out []interface{}
-	err := _Distribution.contract.Call(opts, &out, "CommunityPool")
-
-	if err != nil {
-		return *new([]DecCoin), err
-	}
-
-	out0 := *abi.ConvertType(out[0], new([]DecCoin)).(*[]DecCoin)
-
-	return out0, err
-
-}
-
-// CommunityPool is a free data retrieval call binding the contract method 0x5637d7c9.
-//
-// Solidity: function CommunityPool() view returns((string,uint256)[] pool)
-func (_Distribution *DistributionSession) CommunityPool() ([]DecCoin, error) {
-	return _Distribution.Contract.CommunityPool(&_Distribution.CallOpts)
-}
-
-// CommunityPool is a free data retrieval call binding the contract method 0x5637d7c9.
-//
-// Solidity: function CommunityPool() view returns((string,uint256)[] pool)
-func (_Distribution *DistributionCallerSession) CommunityPool() ([]DecCoin, error) {
-	return _Distribution.Contract.CommunityPool(&_Distribution.CallOpts)
 }
 
 // DelegationRewards is a free data retrieval call binding the contract method 0xc9a21b7b.
@@ -517,86 +486,65 @@ func (_Distribution *DistributionCallerSession) ValidatorSlashes(validatorAddres
 	return _Distribution.Contract.ValidatorSlashes(&_Distribution.CallOpts, validatorAddress, startingHeight, endingHeight, pageRequest)
 }
 
-// FundCommunityPool is a paid mutator transaction binding the contract method 0xed41d0b6.
+// SetWithdrawAddress is a paid mutator transaction binding the contract method 0x3ab1a494.
 //
-// Solidity: function fundCommunityPool(address depositor, uint256 amount) returns(bool success)
-func (_Distribution *DistributionTransactor) FundCommunityPool(opts *bind.TransactOpts, depositor common.Address, amount *big.Int) (*types.Transaction, error) {
-	return _Distribution.contract.Transact(opts, "fundCommunityPool", depositor, amount)
+// Solidity: function setWithdrawAddress(address withdrawerAddress) returns(bool success)
+func (_Distribution *DistributionTransactor) SetWithdrawAddress(opts *bind.TransactOpts, withdrawerAddress common.Address) (*types.Transaction, error) {
+	return _Distribution.contract.Transact(opts, "setWithdrawAddress", withdrawerAddress)
 }
 
-// FundCommunityPool is a paid mutator transaction binding the contract method 0xed41d0b6.
+// SetWithdrawAddress is a paid mutator transaction binding the contract method 0x3ab1a494.
 //
-// Solidity: function fundCommunityPool(address depositor, uint256 amount) returns(bool success)
-func (_Distribution *DistributionSession) FundCommunityPool(depositor common.Address, amount *big.Int) (*types.Transaction, error) {
-	return _Distribution.Contract.FundCommunityPool(&_Distribution.TransactOpts, depositor, amount)
+// Solidity: function setWithdrawAddress(address withdrawerAddress) returns(bool success)
+func (_Distribution *DistributionSession) SetWithdrawAddress(withdrawerAddress common.Address) (*types.Transaction, error) {
+	return _Distribution.Contract.SetWithdrawAddress(&_Distribution.TransactOpts, withdrawerAddress)
 }
 
-// FundCommunityPool is a paid mutator transaction binding the contract method 0xed41d0b6.
+// SetWithdrawAddress is a paid mutator transaction binding the contract method 0x3ab1a494.
 //
-// Solidity: function fundCommunityPool(address depositor, uint256 amount) returns(bool success)
-func (_Distribution *DistributionTransactorSession) FundCommunityPool(depositor common.Address, amount *big.Int) (*types.Transaction, error) {
-	return _Distribution.Contract.FundCommunityPool(&_Distribution.TransactOpts, depositor, amount)
+// Solidity: function setWithdrawAddress(address withdrawerAddress) returns(bool success)
+func (_Distribution *DistributionTransactorSession) SetWithdrawAddress(withdrawerAddress common.Address) (*types.Transaction, error) {
+	return _Distribution.Contract.SetWithdrawAddress(&_Distribution.TransactOpts, withdrawerAddress)
 }
 
-// SetWithdrawAddress is a paid mutator transaction binding the contract method 0xe59a2f99.
+// WithdrawDelegatorRewards is a paid mutator transaction binding the contract method 0x6636125e.
 //
-// Solidity: function setWithdrawAddress(address delegatorAddress, address withdrawerAddress) returns(bool success)
-func (_Distribution *DistributionTransactor) SetWithdrawAddress(opts *bind.TransactOpts, delegatorAddress common.Address, withdrawerAddress common.Address) (*types.Transaction, error) {
-	return _Distribution.contract.Transact(opts, "setWithdrawAddress", delegatorAddress, withdrawerAddress)
+// Solidity: function withdrawDelegatorRewards(string validatorAddress) returns((string,uint256)[] amount)
+func (_Distribution *DistributionTransactor) WithdrawDelegatorRewards(opts *bind.TransactOpts, validatorAddress string) (*types.Transaction, error) {
+	return _Distribution.contract.Transact(opts, "withdrawDelegatorRewards", validatorAddress)
 }
 
-// SetWithdrawAddress is a paid mutator transaction binding the contract method 0xe59a2f99.
+// WithdrawDelegatorRewards is a paid mutator transaction binding the contract method 0x6636125e.
 //
-// Solidity: function setWithdrawAddress(address delegatorAddress, address withdrawerAddress) returns(bool success)
-func (_Distribution *DistributionSession) SetWithdrawAddress(delegatorAddress common.Address, withdrawerAddress common.Address) (*types.Transaction, error) {
-	return _Distribution.Contract.SetWithdrawAddress(&_Distribution.TransactOpts, delegatorAddress, withdrawerAddress)
+// Solidity: function withdrawDelegatorRewards(string validatorAddress) returns((string,uint256)[] amount)
+func (_Distribution *DistributionSession) WithdrawDelegatorRewards(validatorAddress string) (*types.Transaction, error) {
+	return _Distribution.Contract.WithdrawDelegatorRewards(&_Distribution.TransactOpts, validatorAddress)
 }
 
-// SetWithdrawAddress is a paid mutator transaction binding the contract method 0xe59a2f99.
+// WithdrawDelegatorRewards is a paid mutator transaction binding the contract method 0x6636125e.
 //
-// Solidity: function setWithdrawAddress(address delegatorAddress, address withdrawerAddress) returns(bool success)
-func (_Distribution *DistributionTransactorSession) SetWithdrawAddress(delegatorAddress common.Address, withdrawerAddress common.Address) (*types.Transaction, error) {
-	return _Distribution.Contract.SetWithdrawAddress(&_Distribution.TransactOpts, delegatorAddress, withdrawerAddress)
+// Solidity: function withdrawDelegatorRewards(string validatorAddress) returns((string,uint256)[] amount)
+func (_Distribution *DistributionTransactorSession) WithdrawDelegatorRewards(validatorAddress string) (*types.Transaction, error) {
+	return _Distribution.Contract.WithdrawDelegatorRewards(&_Distribution.TransactOpts, validatorAddress)
 }
 
-// WithdrawDelegatorRewards is a paid mutator transaction binding the contract method 0xb46a8d61.
+// WithdrawValidatorCommission is a paid mutator transaction binding the contract method 0x0bde076d.
 //
-// Solidity: function withdrawDelegatorRewards(address delegatorAddress, string validatorAddress) returns((string,uint256)[] amount)
-func (_Distribution *DistributionTransactor) WithdrawDelegatorRewards(opts *bind.TransactOpts, delegatorAddress common.Address, validatorAddress string) (*types.Transaction, error) {
-	return _Distribution.contract.Transact(opts, "withdrawDelegatorRewards", delegatorAddress, validatorAddress)
+// Solidity: function withdrawValidatorCommission() returns((string,uint256)[] amount)
+func (_Distribution *DistributionTransactor) WithdrawValidatorCommission(opts *bind.TransactOpts) (*types.Transaction, error) {
+	return _Distribution.contract.Transact(opts, "withdrawValidatorCommission")
 }
 
-// WithdrawDelegatorRewards is a paid mutator transaction binding the contract method 0xb46a8d61.
+// WithdrawValidatorCommission is a paid mutator transaction binding the contract method 0x0bde076d.
 //
-// Solidity: function withdrawDelegatorRewards(address delegatorAddress, string validatorAddress) returns((string,uint256)[] amount)
-func (_Distribution *DistributionSession) WithdrawDelegatorRewards(delegatorAddress common.Address, validatorAddress string) (*types.Transaction, error) {
-	return _Distribution.Contract.WithdrawDelegatorRewards(&_Distribution.TransactOpts, delegatorAddress, validatorAddress)
+// Solidity: function withdrawValidatorCommission() returns((string,uint256)[] amount)
+func (_Distribution *DistributionSession) WithdrawValidatorCommission() (*types.Transaction, error) {
+	return _Distribution.Contract.WithdrawValidatorCommission(&_Distribution.TransactOpts)
 }
 
-// WithdrawDelegatorRewards is a paid mutator transaction binding the contract method 0xb46a8d61.
+// WithdrawValidatorCommission is a paid mutator transaction binding the contract method 0x0bde076d.
 //
-// Solidity: function withdrawDelegatorRewards(address delegatorAddress, string validatorAddress) returns((string,uint256)[] amount)
-func (_Distribution *DistributionTransactorSession) WithdrawDelegatorRewards(delegatorAddress common.Address, validatorAddress string) (*types.Transaction, error) {
-	return _Distribution.Contract.WithdrawDelegatorRewards(&_Distribution.TransactOpts, delegatorAddress, validatorAddress)
-}
-
-// WithdrawValidatorCommission is a paid mutator transaction binding the contract method 0x11fc0bfe.
-//
-// Solidity: function withdrawValidatorCommission(address validatorAddress) returns((string,uint256)[] amount)
-func (_Distribution *DistributionTransactor) WithdrawValidatorCommission(opts *bind.TransactOpts, validatorAddress common.Address) (*types.Transaction, error) {
-	return _Distribution.contract.Transact(opts, "withdrawValidatorCommission", validatorAddress)
-}
-
-// WithdrawValidatorCommission is a paid mutator transaction binding the contract method 0x11fc0bfe.
-//
-// Solidity: function withdrawValidatorCommission(address validatorAddress) returns((string,uint256)[] amount)
-func (_Distribution *DistributionSession) WithdrawValidatorCommission(validatorAddress common.Address) (*types.Transaction, error) {
-	return _Distribution.Contract.WithdrawValidatorCommission(&_Distribution.TransactOpts, validatorAddress)
-}
-
-// WithdrawValidatorCommission is a paid mutator transaction binding the contract method 0x11fc0bfe.
-//
-// Solidity: function withdrawValidatorCommission(address validatorAddress) returns((string,uint256)[] amount)
-func (_Distribution *DistributionTransactorSession) WithdrawValidatorCommission(validatorAddress common.Address) (*types.Transaction, error) {
-	return _Distribution.Contract.WithdrawValidatorCommission(&_Distribution.TransactOpts, validatorAddress)
+// Solidity: function withdrawValidatorCommission() returns((string,uint256)[] amount)
+func (_Distribution *DistributionTransactorSession) WithdrawValidatorCommission() (*types.Transaction, error) {
+	return _Distribution.Contract.WithdrawValidatorCommission(&_Distribution.TransactOpts)
 }

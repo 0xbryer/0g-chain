@@ -156,17 +156,3 @@ func (d *DistributionPrecompile) DelegatorWithdrawAddress(ctx sdk.Context, _ *vm
 
 	return method.Outputs.Pack(withdrawAddress)
 }
-
-func (d *DistributionPrecompile) CommunityPool(ctx sdk.Context, _ *vm.EVM, method *abi.Method, args []interface{}) ([]byte, error) {
-	req, err := NewQueryCommunityPoolRequest(args)
-	if err != nil {
-		return nil, err
-	}
-
-	response, err := distributionkeeper.Querier{Keeper: d.distributionKeeper}.CommunityPool(ctx, req)
-	if err != nil {
-		return nil, err
-	}
-
-	return method.Outputs.Pack(convertCommunityPoolResponse(response))
-}

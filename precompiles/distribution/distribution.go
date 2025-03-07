@@ -18,7 +18,6 @@ const (
 	DistributionFunctionSetWithdrawAddress          = "setWithdrawAddress"
 	DistributionFunctionWithdrawDelegatorRewards    = "withdrawDelegatorRewards"
 	DistributionFunctionWithdrawValidatorCommission = "withdrawValidatorCommission"
-	DistributionFunctionFundCommunityPool           = "fundCommunityPool"
 	// query
 	DistributionFunctionParams                      = "params"
 	DistributionFunctionValidatorDistributionInfo   = "validatorDistributionInfo"
@@ -29,7 +28,6 @@ const (
 	DistributionFunctionDelegationTotalRewards      = "delegationTotalRewards"
 	DistributionFunctionDelegatorValidators         = "delegatorValidators"
 	DistributionFunctionDelegatorWithdrawAddress    = "delegatorWithdrawAddress"
-	DistributionFunctionCommunityPool               = "CommunityPool"
 )
 
 var _ vm.PrecompiledContract = &DistributionPrecompile{}
@@ -69,8 +67,7 @@ func (d *DistributionPrecompile) IsTx(method string) bool {
 	switch method {
 	case DistributionFunctionSetWithdrawAddress,
 		DistributionFunctionWithdrawDelegatorRewards,
-		DistributionFunctionWithdrawValidatorCommission,
-		DistributionFunctionFundCommunityPool:
+		DistributionFunctionWithdrawValidatorCommission:
 		return true
 	default:
 		return false
@@ -109,17 +106,13 @@ func (d *DistributionPrecompile) Run(evm *vm.EVM, contract *vm.Contract, readonl
 		bz, err = d.DelegatorValidators(ctx, evm, method, args)
 	case DistributionFunctionDelegatorWithdrawAddress:
 		bz, err = d.DelegatorWithdrawAddress(ctx, evm, method, args)
-	case DistributionFunctionCommunityPool:
-		bz, err = d.CommunityPool(ctx, evm, method, args)
 	// txs
 	case DistributionFunctionSetWithdrawAddress:
-		bz, err = d.CreateValidator(ctx, evm, stateDB, contract, method, args)
+		bz, err = d.SetWithdrawAddress(ctx, evm, stateDB, contract, method, args)
 	case DistributionFunctionWithdrawDelegatorRewards:
-		bz, err = d.EditValidator(ctx, evm, stateDB, contract, method, args)
+		bz, err = d.WithdrawDelegatorReward(ctx, evm, stateDB, contract, method, args)
 	case DistributionFunctionWithdrawValidatorCommission:
-		bz, err = d.Delegate(ctx, evm, stateDB, contract, method, args)
-	case DistributionFunctionFundCommunityPool:
-		bz, err = d.BeginRedelegate(ctx, evm, stateDB, contract, method, args)
+		bz, err = d.WithdrawValidatorCommission(ctx, evm, stateDB, contract, method, args)
 	}
 
 	if err != nil {

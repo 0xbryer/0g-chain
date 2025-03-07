@@ -303,3 +303,42 @@ func NewQueryCommunityPoolRequest(args []interface{}) (*distributiontypes.QueryC
 func convertCommunityPoolResponse(response *distributiontypes.QueryCommunityPoolResponse) []DecCoin {
 	return convertDecCoins(response.Pool)
 }
+
+func NewMsgSetWithdrawAddress(args []interface{}, sender common.Address) (*distributiontypes.MsgSetWithdrawAddress, error) {
+	if len(args) != 1 {
+		return nil, fmt.Errorf(precompiles_common.ErrInvalidNumberOfArgs, 1, len(args))
+	}
+
+	withdrawAddress := args[0].(common.Address)
+
+	msg := &distributiontypes.MsgSetWithdrawAddress{
+		DelegatorAddress: sdk.AccAddress(sender.Bytes()).String(),
+		WithdrawAddress:  sdk.AccAddress(withdrawAddress.Bytes()).String(),
+	}
+	return msg, msg.ValidateBasic()
+}
+
+func NewMsgWithdrawDelegatorReward(args []interface{}, sender common.Address) (*distributiontypes.MsgWithdrawDelegatorReward, error) {
+	if len(args) != 1 {
+		return nil, fmt.Errorf(precompiles_common.ErrInvalidNumberOfArgs, 1, len(args))
+	}
+
+	validatorAddress := args[0].(common.Address)
+
+	msg := &distributiontypes.MsgWithdrawDelegatorReward{
+		DelegatorAddress: sdk.AccAddress(sender.Bytes()).String(),
+		ValidatorAddress: sdk.AccAddress(validatorAddress.Bytes()).String(),
+	}
+	return msg, msg.ValidateBasic()
+}
+
+func NewMsgWithdrawValidatorCommission(args []interface{}, sender common.Address) (*distributiontypes.MsgWithdrawValidatorCommission, error) {
+	if len(args) != 0 {
+		return nil, fmt.Errorf(precompiles_common.ErrInvalidNumberOfArgs, 0, len(args))
+	}
+
+	msg := &distributiontypes.MsgWithdrawValidatorCommission{
+		ValidatorAddress: sdk.AccAddress(sender.Bytes()).String(),
+	}
+	return msg, msg.ValidateBasic()
+}
