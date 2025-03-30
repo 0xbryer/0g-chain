@@ -52,7 +52,7 @@ func upgradeHandler(
 		fromVM module.VersionMap,
 	) (module.VersionMap, error) {
 		logger := app.Logger()
-		logger.Info(fmt.Sprintf("running %s upgrade handler", name))
+		logger.Info(fmt.Sprintf("Running upgrade handler for %s", name), "plan", plan, "fromVM", fromVM)
 
 		// Run migrations for all modules and return new consensus version map.
 		versionMap, err := app.mm.RunMigrations(ctx, app.configurator, fromVM)
